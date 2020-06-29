@@ -10,8 +10,18 @@ class VehiculoTS {
   }
 }
 
-const Vehiculo2016: VehiculoTS = {
-  marca: 'Hyundai',
-  modelo: 'Tucson',
-  tipo: 'Jeep',
-};
+class Jeep extends VehiculoTS {
+  private color: string;
+
+  constructor( marca: string, modelo: string, tipo: string, color: string){
+    super(marca, modelo, tipo);
+    this.color = color;
+  }
+}
+
+let Tucson : VehiculoTS = new VehiculoTS ( 'Hyundai', 'Tucson', 'Jeep' );
+let TucsonAzul : Jeep = new Jeep ( 'Hyundai', 'Tucson', 'Jeep', 'Azul');
+
+Tucson = TucsonAzul
+TucsonAzul = Tucson
+
